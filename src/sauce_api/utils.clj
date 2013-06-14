@@ -2,9 +2,10 @@
       :author "Mayank Jain <mayank@helpshift.com>"}
   sauce-api.utils
   (:require [sauce-api.clj-http-extended :as clje]
-            [clojure.data.json :as json])
-  (:use [clojure.java.io :only (make-output-stream)]
-        [clojure.string :only (join)]))
+            [clojure.data.json :as json]
+            [clojure.java.io :refer [make-output-stream file]]
+            [clojure.string :refer [join split]])
+  (:import [java.io File]))
 
 (def base-url "https://saucelabs.com/rest/v1/")
 
@@ -24,7 +25,7 @@
   [usr access-key job-id path f]
   (let [dir-path (str path "/" job-id)]
     (println (format "Thread %s: Creating directory: %s" (get-thread-id) dir-path))
-    (.mkdirs (java.io.File. dir-path))
+    (.mkdirs (File. dir-path))
     (println (format "Thread %s: Downloading %s ..." (get-thread-id) f))
     (let [res (clje/clj-get (str base-url usr "/jobs/" job-id "/assets/" f)
                             {:basic-auth [usr access-key]
@@ -43,10 +44,10 @@
 (defn get-filename
   "Returns the filename from the given file-path."
   [file-path]
-  (last (clojure.string/split file-path #"/")))
+  (last (split file-path #"/")))
 
 (defn get-all-files-path
   "Returns a seq of paths for all the files in a given directory."
   [dir-path]
-  (for [file (rest (file-seq (clojure.java.io/file dir-path)))]
+  (for [file (rest (file-seq (file dir-path)))]
     (.getPath file)))
