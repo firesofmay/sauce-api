@@ -5,7 +5,6 @@
   (:require [clj-http.client :as client]
             [clj-http.core :as core]))
 
-
 (def request
   (-> #'core/request
       client/wrap-redirects
@@ -20,7 +19,6 @@
       client/wrap-accept-encoding
       client/wrap-method
       client/wrap-url))
-
 
 (defn clj-get
   "Like #'request, but sets the :method and :url as appropriate."

@@ -4,7 +4,8 @@
   (:require [sauce-api.clj-http-extended :as clje]
             [clojure.data.json :as json]
             [clojure.java.io :refer [make-output-stream file]]
-            [clojure.string :refer [join split]])
+            [clojure.string :refer [join split]]
+            [taoensso.timbre :refer [trace debug info warn error fatal spy]])
   (:import [java.io File]))
 
 (def base-url "https://saucelabs.com/rest/v1/")
@@ -24,9 +25,9 @@
    Ref : https://gist.github.com/hyone/1621163"
   [usr access-key job-id path f]
   (let [dir-path (str path "/" job-id)]
-    (println (format "Thread %s: Creating directory: %s" (get-thread-id) dir-path))
+    (info (format "Thread %s: Creating directory: %s" (get-thread-id) dir-path))
     (.mkdirs (File. dir-path))
-    (println (format "Thread %s: Downloading %s ..." (get-thread-id) f))
+    (info (format "Thread %s: Downloading %s ..." (get-thread-id) f))
     (let [res (clje/clj-get (str base-url usr "/jobs/" job-id "/assets/" f)
                             {:basic-auth [usr access-key]
                              :as :byte-array})
