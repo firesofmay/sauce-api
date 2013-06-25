@@ -6,4 +6,6 @@
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [clj-http "0.7.2"]
                  [org.clojure/data.json "0.2.2"]
-                 [com.taoensso/timbre "2.1.2"]])
+                 [com.taoensso/timbre "2.1.2"]]
+  :codox {:src-dir-uri "https://github.com/firesofmay/sauce-api/blob/master"
+          :src-linenum-anchor-prefix "L"})

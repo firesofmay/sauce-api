@@ -5,7 +5,7 @@
 :full  -&gt; forces full job information to be returned, rather than just IDs.
 :skip  -&gt; skips the specified number of jobs.
 :from  -&gt; returns jobs since the specified time (in epoch time, calculated from UTC).
-:to    -&gt; returns jobs up until the specified time (in epoch time, calculated from UTC).</pre></div><div class="public" id="var-get-id"><h3>get-id</h3><div class="usage"><code>(get-id usr access-key job-id)</code></div><pre class="doc">Show the full information for a job given its ID.
+:to    -&gt; returns jobs up until the specified time (in epoch time, calculated from UTC).</pre><div class="src-link"><a href="https://github.com/firesofmay/sauce-api/blob/master/src/sauce_api/jobs.clj#L7">Source</a></div></div><div class="public" id="var-get-id"><h3>get-id</h3><div class="usage"><code>(get-id usr access-key job-id)</code></div><pre class="doc">Show the full information for a job given its ID.
 Attributes:
 'id': [string] Job Id.
 'owner': [string] Job owner.
@@ -21,21 +21,21 @@ Attributes:
 'video_url': [string] Full URL to the video replay of the job.
 'log_url': [string] Full URL to the Selenium log of the job.
 'public': [string or boolean] Visibility mode [public, public restricted, share (true), team (false), private].
-'tags': [vector of strings] Tags assigned to a job.</pre></div><div class="public" id="var-get-id-assets"><h3>get-id-assets</h3><div class="usage"><code>(get-id-assets usr access-key job-id path)</code><code>(get-id-assets usr access-key job-id path video?)</code><code>(get-id-assets usr access-key job-id path video? screenshots?)</code><code>(get-id-assets usr access-key job-id path video? screenshots? selenium-log?)</code><code>(get-id-assets usr access-key job-id path video? screenshots? selenium-log? sauce-log?)</code></div><pre class="doc">Downloads various assets to a given folder for a given job id.
+'tags': [vector of strings] Tags assigned to a job.</pre><div class="src-link"><a href="https://github.com/firesofmay/sauce-api/blob/master/src/sauce_api/jobs.clj#L22">Source</a></div></div><div class="public" id="var-get-id-assets"><h3>get-id-assets</h3><div class="usage"><code>(get-id-assets usr access-key job-id path)</code><code>(get-id-assets usr access-key job-id path video?)</code><code>(get-id-assets usr access-key job-id path video? screenshots?)</code><code>(get-id-assets usr access-key job-id path video? screenshots? selenium-log?)</code><code>(get-id-assets usr access-key job-id path video? screenshots? selenium-log? sauce-log?)</code></div><pre class="doc">Downloads various assets to a given folder for a given job id.
 By default, downloads all the assets.
 Optional boolean Parameters (In order):
 video? screenshots? selenium-log? sauce-log?
-Downloads 5 screenshots at at time in parallel for speed.</pre></div><div class="public" id="var-get-id-assets-list"><h3>get-id-assets-list</h3><div class="usage"><code>(get-id-assets-list usr access-key job-id)</code></div><pre class="doc">Get details about the static assets collected for a specific job.
+Downloads 5 screenshots at at time in parallel for speed.</pre><div class="src-link"><a href="https://github.com/firesofmay/sauce-api/blob/master/src/sauce_api/jobs.clj#L80">Source</a></div></div><div class="public" id="var-get-id-assets-list"><h3>get-id-assets-list</h3><div class="usage"><code>(get-id-assets-list usr access-key job-id)</code></div><pre class="doc">Get details about the static assets collected for a specific job.
 Returns:
 sauce-log: [string] Name of the Sauce log recorded for a job.
 selenium-log: [string] Name of the selenium Server log file produced by a job.
 video: [string] Name of the video file name recorded for a job.
-screenshots: [vector of strings] Vector of screenshot names captured by a job.</pre></div><div class="public" id="var-stop-id"><h3>stop-id</h3><div class="usage"><code>(stop-id usr access-key job-id)</code></div><pre class="doc">Terminates a running job.
-</pre></div><div class="public" id="var-update-id"><h3>update-id</h3><div class="usage"><code>(update-id usr access-key job-id params)</code></div><pre class="doc">Changes a pre-existing job.
+screenshots: [vector of strings] Vector of screenshot names captured by a job.</pre><div class="src-link"><a href="https://github.com/firesofmay/sauce-api/blob/master/src/sauce_api/jobs.clj#L69">Source</a></div></div><div class="public" id="var-stop-id"><h3>stop-id</h3><div class="usage"><code>(stop-id usr access-key job-id)</code></div><pre class="doc">Terminates a running job.
+</pre><div class="src-link"><a href="https://github.com/firesofmay/sauce-api/blob/master/src/sauce_api/jobs.clj#L60">Source</a></div></div><div class="public" id="var-update-id"><h3>update-id</h3><div class="usage"><code>(update-id usr access-key job-id params)</code></div><pre class="doc">Changes a pre-existing job.
 Parameters:
 name: [string] Change the job name.
 tags: [vector of strings] Change the job tags.
 public: [string or boolean] Set job visibility to 'public', 'public restricted', 'share' (true), 'team' (false) or 'private'.
 passed: [boolean] Set whether the job passed or not on the user end.
 build: [int] The AUT build number tested by this test.
-custom-data: [map] a set of key-value pairs with any extra info that a user would like to add to the job.</pre></div></div></body></html>
+custom-data: [map] a set of key-value pairs with any extra info that a user would like to add to the job.</pre><div class="src-link"><a href="https://github.com/firesofmay/sauce-api/blob/master/src/sauce_api/jobs.clj#L44">Source</a></div></div></div></body></html>
