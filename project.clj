@@ -1,6 +1,6 @@
-(defproject sauce-api "0.1.0-SNAPSHOT"
+(defproject org.clojars.firesofmay/sauce-api "0.1.0-SNAPSHOT"
   :description "Sauce Lab API"
-  :url "http://example.com/FIXME"
+  :url "http://github.com/firesofmay/Sauce-api/"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
