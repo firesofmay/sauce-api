@@ -3,9 +3,11 @@
 Clojure Library to interact with Sauce's REST API.
 
 ## Usage
+Check :
+https://saucelabs.com/docs/rest#
 
-Check : https://saucelabs.com/docs/rest#
-Also check the documentation for each function.
+For documentation :
+http://firesofmay.github.io/sauce-api/
 
 ## License
 
